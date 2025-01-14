@@ -166,40 +166,21 @@ gsap.to(".card-3", {
   }
 });
 
-gsap.from(".hero__copy span", {
+// Animasi untuk hero__title dengan animasi GSAP biasa tanpa SplitText
+gsap.from(".hero__title--1", {
   opacity: 0,
-  duration: 1,
   y: 40,
-  delay: 0.5,
-  ease: "power2.inOut"
+  duration: 1.5,
+  ease: "power4",
+  stagger: 0.15
 });
 
-let titleOne = new SplitText(".hero__title--1", { type: "words" });
-let oneWords = titleOne.words;
-
-gsap.from(oneWords, {
+gsap.from(".hero__title--2", {
   opacity: 0,
+  y: 40,
   duration: 1.5,
-  y: 80,
   ease: "power4",
-  stagger: {
-    each: 0.15
-  }
-});
-
-let titleTwo = new SplitText(".hero__title--2", { type: "words" });
-let twoWords = titleTwo.words;
-
-gsap.from(twoWords, {
-  opacity: 0,
-  duration: 1.5,
-  y: 80,
-
-  delay: 0.25,
-  ease: "power4",
-  stagger: {
-    each: 0.15
-  }
+  stagger: 0.15
 });
 
 gsap.to(".cross-3", {
@@ -247,14 +228,6 @@ tl.from(".footer__link", {
     },
     "-=1.75"
   );
-
-// ScrollTrigger.addEventListener("scrollEnd", () => {
-//   document.querySelector('.cross-1').classList.add('scroll-end')
-// });
-
-// ScrollTrigger.addEventListener("scrollStart", () => {
-//   document.querySelector('.cross-1').classList.remove('scroll-end')
-// });
 
 gsap.fromTo(
   ".hero__image",

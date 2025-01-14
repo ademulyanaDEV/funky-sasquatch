@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Funky Sasquatch</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-<link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap'><link rel="stylesheet" href="./style.css">
-
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap'>
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-<!-- partial:index.partial.html -->
-<section class="section section--intro">
+  <!-- partial:index.partial.html -->
+  <section class="section section--intro">
     <img class="hero__image" src="FACE.jpg" alt="" />
 
     <svg class="cross-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
@@ -25,8 +25,12 @@
     <div class="ring ring--left"></div>
     <div class="ring ring--right"></div>
 
-    <h3 class="hero__title hero__title--1">HI, I'M SASQUATCH</h3>
-    <h3 class="hero__title hero__title--2">WEB3 DEVELOPER</h3>
+    <h3 class="hero__title hero__title--1">
+      <span>HI,</span> <span>I'M</span> <span>SASQUATCH</span>
+    </h3>
+    <h3 class="hero__title hero__title--2">
+      <span>WEB3</span> <span>DEVELOPER</span>
+    </h3>
 
     <p class="hero__copy"><span>Not the face you see here, but trust me—blue is key.</span></p>
   </section>
@@ -56,8 +60,7 @@
 
     <div class="footer__link">
       <svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="var(--skyblue)" style="margin-bottom: 2rem" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
-        </path>
+        <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
       </svg>
     </div>
 
@@ -69,11 +72,26 @@
   </section>
 
   <div class="cursor"></div>
-<!-- partial -->
+  <!-- partial -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/CSSRulePlugin.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/ScrollTrigger.min.js'></script>
-<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/SplitText3.min.js'></script><script  src="./script.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/ScrollTrigger.min.js'></script>
+  <script src="./script.js"></script>
 
+  <script>
+    // GSAP animation without SplitText
+    gsap.from(".hero__title--1 span", {
+      duration: 0.5,
+      opacity: 0,
+      x: -50,
+      stagger: 0.05
+    });
+
+    gsap.from(".hero__title--2 span", {
+      duration: 0.5,
+      opacity: 0,
+      x: 50,
+      stagger: 0.05
+    });
+  </script>
 </body>
 </html>
